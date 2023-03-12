@@ -1,0 +1,182 @@
+$primary: #5265E1;
+$secondary: #FA5959;
+
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+$font-family-sans-serif: 'Rubik', sans-serif;
+
+// Navbar 
+$navbar-light-hover-color: $secondary;
+$nav-link-font-size: 0.8rem;
+$navbar-dark-color: $gray-600;
+$navbar-dark-hover-color: $secondary;
+
+
+// Active nav
+$offcanvas-horizontal-width: 420px;
+$offcanvas-bg-color: hsla(229, 31%, 21%, 0.9);
+
+
+// Tabs color changes
+$nav-tabs-link-active-bg: transparent;
+$nav-link-hover-color: $secondary;        
+$nav-link-color: $gray-700;
+$nav-tabs-link-active-color: $dark;
+$nav-tabs-link-active-border-color: $secondary;
+
+
+// Accordion color changes
+$accordion-button-focus-border-color: none;
+$accordion-button-focus-box-shadow: none;
+$accordion-button-active-bg: transparent;
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$secondary}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-color: $dark;
+
+.accordion-button {
+  &:hover {
+    color: $secondary;
+  }
+}
+
+// Buttons
+$btn-border-width: 2px;
+$btn-font-size:0.9rem;
+
+// Footer links color
+.footer.navbar-nav {
+  --#{$prefix}nav-link-color: #{$light};
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Classes modified
+
+.login.btn{
+  font-size: 0.8rem;
+}
+
+
+// Nav 
+.btn-close {
+  background-image: url(../assets/icon-close.svg);
+}
+
+.offcanvas.show{
+  & .offcanvas-header {
+    padding: 1.7rem 2rem 1.1rem;
+  }
+
+  & .nav-item {
+    padding-block: 0.5rem;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+    &:nth-child(5) {
+      padding-top: 1.3rem;
+    }
+  }
+
+  & .nav-link {
+    font-size: 1.1rem;
+  }
+
+  & .social-links {
+    padding: 1.5rem;
+  }
+
+  & .navbar-nav {
+    padding-inline: 1rem;
+
+  }
+}
+
+
+// Hover 
+.btn {
+  &-primary {
+    @include button-variant($primary, $primary, $hover-border: $primary, $hover-background: $white, $hover-color: $primary);
+  }
+
+  &-secondary {
+    @include button-variant($secondary, $secondary, $color: $white, $hover-border: $secondary, $hover-background: $white, $hover-color: $secondary);
+  }
+  
+  &-light {
+    @include button-variant($light, $light,$hover-border: $dark, $hover-color: $dark);
+  }
+}
+
+.nav-tabs .nav-link{
+  border: none;
+  border-bottom: #{$nav-tabs-border-width} solid $gray-400;
+  font-size: 0.9rem;
+
+  &.active {
+    border-width: 3px;
+  }
+}
+
+.was-validated .form-control:invalid{
+  background-image: url(../assets/icon-error.svg);
+}
+
+.logo-facebook, .logo-twitter {
+  &:hover {
+    & path {
+      fill: $secondary
+    }
+  }
+}
+
+
+// Footer logo
+.logo {
+  & path {
+    fill: $white;
+  }
+}
+
+
+// Cards
+.download-card{
+  @extend .card;
+  @extend .shadow;
+  flex-basis: 15rem;
+  padding-block: 2rem 0.5rem;
+  padding-inline: 0;
+  align-items: center;
+  border: 1px solid $light;
+
+  & > img { 
+    display: block;
+    width: 40%;
+    margin-inline: auto;
+    margin-bottom: 0.5rem;
+  }
+  
+  & .card-body{
+    padding: 1rem 0;
+    & .card-title {
+      font-size: 1.4rem;
+    }
+    & .card-text {
+      color: $gray-600;
+    }
+
+    & img {
+      margin-block: 0.5rem 1.2rem;
+    }
+  }
+
+  &:nth-child(1){
+    align-self: flex-start;
+  }
+
+  &:nth-child(2){
+    align-self: center;
+  }
+
+  &:nth-child(3){
+    align-self: flex-end;
+  }
+}
